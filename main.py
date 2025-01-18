@@ -1,32 +1,42 @@
 import xml.etree.ElementTree as ETree
 
 filename = "person.xml"
+
 try:
+    # Парсинг XML файла
     tree = ETree.parse(filename)
     root = tree.getroot()
-    data = []
-    # Извлечение данных из XML
+
+    # Извлечение данных из атрибутов и элементов XML
     person_data = {
-        "firstName": root.find("firstName").text,
-        "lastName": root.find("lastName").text,
+        "firstName": root.attrib.get("firstName", "Не указано"),  # Получение атрибутов
+        "lastName": root.attrib.get("lastName", "Не указано"),
         "address": {
-            "streetAddress": root.find(".//streetAddress").text,
-            "city": root.find(".//city").text,
-            "postalCode": root.find(".//postalCode").text,
+            "streetAddress": root.find(".//address").attrib.get("streetAddress", "Не указано"),
+            "city": root.find(".//address").attrib.get("city", "Не указано"),
+            "postalCode": root.find(".//address").attrib.get("postalCode", "Не указано"),
         },
-        "phoneNumbers": [phone.text for phone in root.findall(".//phoneNumber")]
+        "phoneNumbers": [phone.text.strip() for phone in root.findall(".//phoneNumber") if phone.text]
     }
+
+    # Вывод данных
     print("------------------")
-    print("firstname:", person_data["firstName"])
-    print("lastname:", person_data["lastName"])
-    print("address:", person_data["address"])
-    print("phones", person_data["phoneNumbers"])
+    print("Имя:", person_data["firstName"])
+    print("Фамилия:", person_data["lastName"])
+    print("Адрес:")
+    print("---Улица:", person_data["address"]["streetAddress"])
+    print("---Город:", person_data["address"]["city"])
+    print("---Почтовый индекс:", person_data["address"]["postalCode"])
+    print("Телефоны:")
+    for phone in person_data["phoneNumbers"]:
+        print("  -", phone)
     print("------------------")
+
 except FileNotFoundError:
-    print("Файл не найден")
+    print("Файл не найден.")
 except ETree.ParseError:
-    print(f"Ошибка чтения XML файла {filename}.")
+    print(f"Ошибка чтения XML файла {filename}. Убедитесь, что файл имеет корректный формат XML.")
 except Exception as e:
-    print(f"Ошибка: {e}")
+    print(f"Произошла ошибка: {e}")
 finally:
     print("Завершение работы программы")
