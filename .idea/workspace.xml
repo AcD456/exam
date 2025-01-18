@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb5c9400-c2de-4192-8059-089b48436119" name="Changes" comment="final 3" />
+    <list default="true" id="bb5c9400-c2de-4192-8059-089b48436119" name="Changes" comment="final 3'">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests in test_parse.py.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -89,13 +93,22 @@
       <option name="project" value="LOCAL" />
       <updated>1737192272642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="final 3'">
+      <option name="closed" value="true" />
+      <created>1737192313710</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737192313710</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="final" />
     <MESSAGE value="final 2" />
     <MESSAGE value="final 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="final 3" />
+    <MESSAGE value="final 3'" />
+    <option name="LAST_COMMIT_MESSAGE" value="final 3'" />
   </component>
 </project>
